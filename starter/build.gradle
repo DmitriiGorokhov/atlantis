@@ -1,0 +1,17 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+    implementation project(':backend')
+    implementation project(':frontend')
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+}
+
+bootJar {
+    archiveFileName = 'atlantis.jar'
+    manifest {
+        attributes 'Start-Class': 'com.atlantis.starter.AtlantisApplication'
+    }
+}
