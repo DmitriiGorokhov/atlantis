@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/V1__create_users.sql
+  - include:
+      file: db/changelog/V2__create_role_and_permission.sql
+  - include:
+      file: db/changelog/V3__insert_default_roles_and_permissions.sql
+  - include:
+      file: db/changelog/V4__assign_permissions_to_roles.sql
