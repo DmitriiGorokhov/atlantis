@@ -12,7 +12,7 @@ Atlantis is a modern educational platform featuring AI-generated content, gamifi
 
 ### 🛠️ Tech Stack
 
-- Backend: Java 25, Spring Boot 3.5.11
+- Backend: Java 21, Spring Boot 3.5.11
 - Frontend: Vaadin 24.5
 - Database: PostgreSQL, Redis
 - Messaging: Apache Kafka
@@ -32,8 +32,8 @@ Atlantis is a modern educational platform featuring AI-generated content, gamifi
 ### 🚀 Quick Start
 
 #### Prerequisites:
-- Java 25+
-- Gradle 8.10+
+- Java 21
+- Gradle 8.10
 - Docker (optional, for local infrastructure)
 
 #### Run locally:

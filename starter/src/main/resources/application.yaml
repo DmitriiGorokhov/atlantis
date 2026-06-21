@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: atlantis
+
+server:
+  port: 8080
+
+vaadin:
+  allowed-packages: com.atlantis.frontend
+
+logging:
+  level:
+    com.atlantis: INFO
