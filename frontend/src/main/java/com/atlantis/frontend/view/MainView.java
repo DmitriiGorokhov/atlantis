@@ -1,22 +1,48 @@
-package com.atlantis.frontend.views;
+package com.atlantis.frontend.view;
 
+import com.atlantis.frontend.component.AuthenticationNavigation;
+import com.atlantis.frontend.constant.PageTitleConstant;
+import com.atlantis.frontend.constant.RouteConstant;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.flow.spring.security.AuthenticationContext;
+import jakarta.annotation.security.PermitAll;
 
-@Route("")
-@PageTitle("Atlantis | Образовательная платформа")
+@Route(RouteConstant.MAIN)
+@PageTitle(PageTitleConstant.MAIN)
+@PermitAll
+@AnonymousAllowed
 public class MainView extends VerticalLayout {
 
-    public MainView() {
+    private final AuthenticationNavigation authenticationNavigation;
+
+    public MainView(AuthenticationContext authenticationContext) {
+        this.authenticationNavigation = new AuthenticationNavigation(authenticationContext);
+        buildUI();
+    }
+
+    private void buildUI() {
         setSizeFull();
         setPadding(true);
         setSpacing(true);
-        setAlignItems(Alignment.CENTER);
-        setJustifyContentMode(JustifyContentMode.CENTER);
+
+        FlexLayout header = new FlexLayout();
+        header.setWidthFull();
+        header.setJustifyContentMode(FlexLayout.JustifyContentMode.END);
+        header.setAlignItems(FlexLayout.Alignment.CENTER);
+        header.add(authenticationNavigation);
+
+        VerticalLayout content = new VerticalLayout();
+        content.setAlignItems(Alignment.CENTER);
+        content.setJustifyContentMode(JustifyContentMode.CENTER);
+        content.setPadding(true);
+        content.setSpacing(true);
 
         H1 title = new H1("🌊 Atlantis");
         title.getStyle()
@@ -54,6 +80,10 @@ public class MainView extends VerticalLayout {
                 .set("color", "#546e7a")
                 .set("margin-top", "20px");
 
-        add(title, subtitle, description, quote);
+        content.add(title, subtitle, description, quote);
+
+        add(header, content);
+        setFlexGrow(1, content);
+        setAlignItems(Alignment.CENTER);
     }
 }

@@ -8,6 +8,19 @@
 .gradle/
 build/
 
+# Vaadin generated
+frontend/src/main/frontend/
+frontend/src/main/bundles/
+frontend/src/main/dev-bundle/
+frontend/src/main/generated/
+frontend/src/main/frontend/generated/
+frontend/build/
+frontend/dist/
+frontend/node_modules/
+frontend/package-lock.json
+frontend/pnpm-lock.yaml
+frontend/vite.config.ts
+
 # IntelliJ IDEA
 .idea/
 *.iml
