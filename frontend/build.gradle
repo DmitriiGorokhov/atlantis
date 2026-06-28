@@ -3,12 +3,20 @@ plugins {
 }
 
 dependencies {
+    // Модули
     implementation project(':backend')
 
-    implementation 'com.vaadin:vaadin-spring-boot-starter'
-    implementation 'com.vaadin:vaadin-core'
+    // Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    // Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // Vaadin
+    implementation 'com.vaadin:vaadin-spring-boot-starter'
+    implementation 'com.vaadin:vaadin-core'
+
+    // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 }
