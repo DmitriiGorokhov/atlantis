@@ -23,6 +23,10 @@ subprojects {
             mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
             mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
         }
+        dependencies {
+            dependency "org.mapstruct:mapstruct:${mapstructVersion}"
+            dependency "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+        }
     }
 
     tasks.withType(JavaCompile).configureEach {

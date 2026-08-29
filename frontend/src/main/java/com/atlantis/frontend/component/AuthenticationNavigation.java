@@ -51,7 +51,8 @@ public class AuthenticationNavigation extends HorizontalLayout {
 
     private void renderUnauthenticatedUI() {
         Button loginButton = new Button("Войти", click -> getUI().ifPresent(ui -> ui.navigate(RouteConstant.LOGIN)));
+        Button registrationButton = new Button("Зарегистрироваться", click -> getUI().ifPresent(ui -> ui.navigate(RouteConstant.REGISTRATION)));
 
-        add(loginButton);
+        add(loginButton, registrationButton);
     }
 }
